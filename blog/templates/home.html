@@ -6,6 +6,10 @@
 
 {% block content %}
 <!-- <p>{{ perms.blog }}</p> -->
+
+{% if tag %}
+<p>Posts tagged with <strong>"{{ tag.name }}"</strong></p>
+{% endif %}
 {% for post in posts %}
 
 <a href="{{ post.get_absolute_url }}"> {{ post.pk }} : {{ post }}</a>
