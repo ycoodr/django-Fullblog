@@ -17,7 +17,9 @@
             {% endif %}
         </li>
         <li><a class="{% if section == 'home' %}active{% endif %}" href="{% url 'home' %}">Home</a> </li>
+        {% if perms.blog.add_post %}
         <li><a class="{% if section == 'blog_create' %}active{% endif %}" href="{% url 'blog:create' %}">Add new post</a> </li>
+        {% endif %}
     </ul>
     {% block title %} {% endblock %}
 

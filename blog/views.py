@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post
 from .forms import PostForm, PostDeleteForm
+from django.contrib.auth.decorators import permission_required
 
 # Create your views here.
 
@@ -14,6 +15,7 @@ def detail(request, slug=None):
 
     return render(request, 'blog/detail.html', {'section': 'blog_detail', 'post': post,})
 
+@permission_required('blog.add_post', raise_exception=True)
 def create(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
@@ -26,6 +28,7 @@ def create(request):
         form = PostForm()
     return render(request, 'blog/create.html', {'section': 'blog_create', 'form': form,})
 
+@permission_required('blog.change_post', raise_exception=True)
 def edit(request, pk=None):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
@@ -38,6 +41,7 @@ def edit(request, pk=None):
 
     return render(request, 'blog/edit.html', {'section': 'blog_edit', 'form': form, 'post': post,})
 
+@permission_required('blog.delete_post', raise_exception=True)
 def delete(request, pk=None):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
