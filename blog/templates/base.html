@@ -24,5 +24,6 @@
     {% block title %} {% endblock %}
 
     <p>{% block content %} Some default content {% endblock %}</p>
+    {% include 'blog/_post_list.html' with heading='Latest posts' %}
 </body>
 </html>
