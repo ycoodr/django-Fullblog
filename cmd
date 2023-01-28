@@ -9,4 +9,6 @@ python3 manage.py createsuperuser
 python3 manage.py shell
 pip3 install django-allauth
 pip3 install django_taggit
+pip3 install pillow
+pip3 install django-imagekit
 
