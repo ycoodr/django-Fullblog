@@ -11,7 +11,7 @@
 <p>Posts tagged with <strong>"{{ tag.name }}"</strong></p>
 {% endif %}
 {% for post in posts %}
-
+{% include 'blog/_post.html' with post=post %}
 <a href="{{ post.get_absolute_url }}"> {{ post.pk }} : {{ post }}</a>
 {% if perms.blog.change_post %}
 [ <a href="{% url 'blog:edit' pk=post.pk  %}">Edit</a> ]

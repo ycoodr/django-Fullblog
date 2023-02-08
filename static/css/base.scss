@@ -1,3 +1,13 @@
+@import "normalize";
+@import "common";
+@import "header";
+@import "layout";
+@import "blog";
+@import "post_list";
+@import "forms";
+@import "pagination";
+
+ 
 .menu {
     list-style: none;
     padding-left: 0;
@@ -16,4 +26,5 @@
 .menu > li > a.active {
     padding-bottom: 0.3em;
     border-bottom: 2px solid #528dea;
+    text-transform: uppercase;
 }

@@ -11,4 +11,11 @@ pip3 install django-allauth
 pip3 install django_taggit
 pip3 install pillow
 pip3 install django-imagekit
+npm init -y
+npm i node-sass
+npm i browser-sync
+npm run sass
+npm run sync
+
+
 

@@ -3,6 +3,7 @@
 {% block title %}<h1>{{ post }}</h1>{% endblock %}
 
 {% block content %}
+{% include 'blog/_post.html' with post=post %}
 
 {% if post.image %}
 <img class="post-img" src="{{ post.image.url }}">
